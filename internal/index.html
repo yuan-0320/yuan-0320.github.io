@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>花蓮慈濟醫院創院40週年－主管合心共識營（院內報名）</title>
+<style>
+  :root{
+    --green-deep:#2f6b4f;
+    --green-mid:#3c8a5f;
+    --green-title:#2e7d4f;
+    --green-sub:#1f5f45;
+    --gold:#c79a3c;
+    --ink:#2c2c2c;
+    --muted:#6b6b6b;
+    --line:#e3e3e0;
+    --danger:#d0433f;
+    --bg:#f4f4f2;
+    --paper:#ffffff;
+    --stripe:#f2f7f4;
+    --font-body: "Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    font-family:var(--font-body);
+    color:var(--ink);
+    line-height:1.6;
+    padding:0 0 60px;
+  }
+  .wrap{max-width:900px;margin:0 auto;padding:0 16px;}
+
+  /* ---- Hero image ---- */
+  .hero-img-wrap{max-width:900px;margin:0 auto;padding:24px 16px 0;aspect-ratio:3 / 2;overflow:hidden;}
+  .hero-img-wrap img{
+    width:100%;
+    display:block;
+    border-radius:14px;
+    box-shadow:0 14px 34px rgba(20,50,35,.16);
+  }
+
+  .info-card{
+    background:var(--paper);
+    border-radius:14px;
+    border:1px solid var(--line);
+    padding:28px 30px 26px;
+    margin:22px 0;
+  }
+  .eyebrow{
+    color:var(--gold);
+    font-size:13.5px;
+    font-weight:700;
+    margin-bottom:10px;
+  }
+  h1.title{
+    font-size:clamp(20px,4vw,25px);
+    font-weight:800;
+    color:var(--green-title);
+    margin:0 0 10px;
+    line-height:1.4;
+  }
+  .subtitle{
+    color:var(--green-sub);
+    font-weight:700;
+    font-size:14.5px;
+    margin:0 0 16px;
+  }
+  .desc{
+    font-size:14px;
+    color:var(--ink);
+    margin:0 0 18px;
+  }
+  .divider{
+    border:none;
+    border-top:1px dashed var(--line);
+    margin:0 0 18px;
+  }
+  .meta-list{display:flex;flex-direction:column;gap:10px;font-size:14px;}
+  .meta-list .row{display:flex;gap:10px;align-items:flex-start;}
+  .meta-list .row .icon{width:20px;text-align:center;flex-shrink:0;}
+  .meta-list .row .label{font-weight:700;min-width:44px;flex-shrink:0;}
+  .meta-list .row .val{color:var(--ink);}
+
+  /* ---- Agenda ---- */
+  .section{
+    background:var(--paper);
+    border-radius:14px;
+    border:1px solid var(--line);
+    overflow:hidden;
+    margin-bottom:22px;
+  }
+  .section-header{
+    background:var(--green-deep);
+    color:#fff;
+    font-weight:700;
+    font-size:15px;
+    padding:14px 20px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .section-header .bar{width:4px;height:16px;background:var(--gold);border-radius:2px;display:inline-block;}
+  .section-body{padding:24px 26px 8px;}
+
+  /* ---- Agenda: fits entirely within the card width, no horizontal scroll ---- */
+  .agenda-table-body{padding:18px;}
+  .agenda-table{border-collapse:collapse;width:100%;table-layout:fixed;}
+  .agenda-table th,.agenda-table td{padding:12px 10px;text-align:left;vertical-align:middle;word-break:break-word;overflow-wrap:break-word;}
+  .agenda-table thead tr{background:var(--green-deep);}
+  .agenda-table thead th{color:#fff;font-weight:700;font-size:15px;}
+  .agenda-table tbody tr{border-bottom:1px solid var(--line);}
+  .agenda-table tbody tr:last-child{border-bottom:none;}
+  .agenda-table tbody tr.white{background:var(--paper);}
+  .agenda-table tbody tr.stripe{background:var(--stripe);}
+  .agenda-col-time{width:20%;}
+  .agenda-col-speaker{width:26%;}
+  .agenda-col-title{width:54%;}
+  .agenda-time{font-weight:700;color:var(--green-sub);font-size:14px;white-space:nowrap;}
+  .agenda-title{display:block;font-weight:700;color:var(--ink);font-size:14px;line-height:1.4;}
+  .agenda-subtitle{display:block;font-weight:400;color:var(--muted);font-size:14px;margin-top:4px;line-height:1.4;}
+  .agenda-speaker{font-weight:400;color:#4a4a4a;font-size:12px;line-height:1.5;white-space:pre-line;}
+  @media (max-width:480px){
+    .agenda-col-time{width:24%;}
+    .agenda-col-speaker{width:26%;}
+    .agenda-col-title{width:50%;}
+    .agenda-table th,.agenda-table td{padding:10px 6px;}
+    .agenda-time{font-size:13px;white-space:normal;}
+    .agenda-title{font-size:13px;}
+    .agenda-speaker{font-size:11px;}
+  }
+
+  /* ---- Contact card ---- */
+  .contact-card{background:#fbf7ec;border:1px solid var(--gold);}
+  .contact-body{padding:18px 22px;}
+  .contact-title{
+    display:flex;align-items:center;gap:8px;
+    font-weight:700;font-size:14.5px;color:var(--green-title);
+    margin-bottom:12px;
+  }
+  .contact-title .bar{width:4px;height:16px;background:var(--gold);border-radius:2px;display:inline-block;}
+  .contact-list{display:flex;flex-direction:column;gap:8px;font-size:14px;}
+  .contact-list .row{display:flex;gap:8px;align-items:center;}
+  .contact-list .row .icon{width:20px;text-align:center;flex-shrink:0;}
+  .contact-list .row .label{font-weight:700;flex-shrink:0;}
+  .contact-list .row .val{color:var(--ink);}
+
+  .section-body{padding-bottom:24px;}
+
+  .field{margin-bottom:20px;}
+  .field label{
+    display:block;
+    font-size:14px;
+    font-weight:700;
+    color:var(--ink);
+    margin-bottom:8px;
+  }
+  .field label .req{color:var(--danger);margin-left:2px;}
+  .field input[type=text],
+  .field input[type=tel],
+  .field input[type=email],
+  .field select,
+  .field textarea{
+    width:100%;
+    padding:11px 13px;
+    border:1px solid var(--line);
+    border-radius:8px;
+    font-size:14.5px;
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:#fff;
+    transition:border-color .15s, box-shadow .15s;
+  }
+  .field input::placeholder, .field textarea::placeholder{color:#b3b3ae;}
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus{
+    outline:none;
+    border-color:var(--green-mid);
+    box-shadow:0 0 0 3px rgba(60,138,95,.15);
+  }
+  .field textarea{resize:vertical;min-height:76px;}
+
+  /* plain radio list (no card / click-button style) */
+  .radio-list{display:flex;flex-direction:column;gap:10px;}
+  .radio-list label{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    font-size:14px;
+    font-weight:400;
+    color:var(--ink);
+    cursor:pointer;
+  }
+  .radio-list input[type=radio]{
+    width:16px;height:16px;
+    accent-color:var(--green-deep);
+    cursor:pointer;
+    flex-shrink:0;
+  }
+
+  .note-box{
+    background:var(--stripe);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:12px 14px;
+    font-size:13px;
+    color:var(--green-sub);
+    margin-bottom:16px;
+  }
+
+  .err{color:var(--danger);font-size:12px;margin-top:6px;display:none;}
+
+  .submit-wrap{padding:6px 26px 26px;}
+  button.submit{
+    width:100%;
+    padding:15px;
+    background:var(--green-deep);
+    color:#fff;
+    border:none;
+    border-radius:9px;
+    font-size:15.5px;
+    font-weight:700;
+    letter-spacing:.03em;
+    cursor:pointer;
+    transition:background .15s;
+  }
+  button.submit:hover{background:var(--green-title);}
+  button.submit:disabled{background:#b7b7ae;cursor:not-allowed;}
+
+  .success{
+    display:none;
+    text-align:center;
+    padding:34px 20px;
+  }
+  .success .check{
+    width:56px;height:56px;border-radius:50%;
+    background:var(--green-deep);
+    display:flex;align-items:center;justify-content:center;
+    margin:0 auto 16px;
+  }
+  .success h3{font-size:18px;color:var(--green-title);margin:0 0 8px;font-weight:800;}
+  .success p{font-size:13.5px;color:var(--muted);}
+
+  .roster-toggle{text-align:center;margin-bottom:10px;}
+  .roster-toggle button{
+    background:none;
+    border:1px solid var(--line);
+    color:var(--green-deep);
+    font-size:12.5px;
+    padding:8px 16px;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:700;
+  }
+  .roster-toggle button:hover{background:#eef4f0;}
+
+  .roster{display:none;background:var(--paper);border-radius:14px;border:1px solid var(--line);padding:22px 24px;}
+  .roster h3{font-size:15px;color:var(--green-title);margin:0 0 14px;font-weight:800;}
+  .roster table{width:100%;border-collapse:collapse;font-size:12.5px;}
+  .roster th,.roster td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);}
+  .roster th{color:var(--green-deep);font-size:11.5px;}
+  .roster-empty{font-size:13px;color:var(--muted);text-align:center;padding:16px 0;}
+
+  footer.note{text-align:center;font-size:11.5px;color:var(--muted);margin-top:18px;}
+
+</style>
+</head>
+<body>
+
+<div class="wrap" style="padding-top:24px;">
+
+  <div class="info-card">
+    <div class="eyebrow">✦ 花蓮慈濟醫院 創院40週年 ✦</div>
+    <h1 class="title">花蓮慈濟醫院創院40週年－主管合心共識營</h1>
+    <div class="subtitle">凝聚合心共識・深耕健康臺灣・共創永續未來</div>
+    <p class="desc">誠摯邀請本院主管參與創院40週年主管合心共識營。透過願景分享、經驗交流與健康臺灣深耕計畫成果研討，共同凝聚行動共識，攜手打造東部健康韌性與區域永續發展。</p>
+    <hr class="divider">
+    <div class="meta-list">
+      <div class="row"><span class="icon">🗓️</span><span class="label">時間：</span><span class="val">2026 年 10 月 04 日（星期日）07:45 - 16:30</span></div>
+      <div class="row"><span class="icon">📍</span><span class="label">地點：</span><span class="val">秧悦美地度假酒店 GAEA VILLA（花蓮縣吉安鄉干城一街183號）</span></div>
+      <div class="row"><span class="icon">💡</span><span class="label">費用：</span><span class="val">免費參加（名額有限，敬請提早報名）</span></div>
+      <div class="row"><span class="icon">🏛️</span><span class="label">指導單位：</span><span class="val">衛生福利部</span></div>
+      <div class="row"><span class="icon">🏥</span><span class="label">主辦單位：</span><span class="val">佛教慈濟醫療財團法人花蓮慈濟醫院</span></div>
+    </div>
+  </div>
+
+  <div class="section contact-card">
+    <div class="section-body contact-body">
+      <div class="contact-title"><span class="bar"></span>活動聯絡人</div>
+      <div class="contact-list">
+        <div class="row"><span class="icon">👤</span><span class="val">企劃室劉組長</span></div>
+        <div class="row"><span class="icon">☎️</span><span class="label">聯絡電話：</span><span class="val">038561825#15318</span></div>
+        <div class="row"><span class="icon">✉️</span><span class="label">電子郵件：</span><span class="val">ldgallen@tzuchi.com.tw</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><span class="bar"></span>114-115年健康臺灣深耕計畫成果研討會暨主管合心共識營　議程</div>
+    <div class="section-body agenda-table-body">
+        <table class="agenda-table">
+          <thead>
+            <tr>
+              <th class="agenda-col-time">時間</th>
+              <th class="agenda-col-title">主題</th>
+              <th class="agenda-col-speaker">主講者／主持人</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr class="white">
+            <td class="agenda-col-time"><span class="agenda-time">07:45-08:00</span></td>
+            <td class="agenda-col-title"><span class="agenda-title">集來雲薩菩</span></td>
+            <td class="agenda-col-speaker"><span class="agenda-speaker">—</span></td>
+          </tr>
+          <tr class="stripe">
+            <td class="agenda-col-time"><span class="agenda-time">08:00-08:30</span></td>
+            <td class="agenda-col-title"><span class="agenda-title">發車前往秋悅美地度假酒店</span></td>
+            <td class="agenda-col-speaker"><span class="agenda-speaker">—</span></td>
+          </tr>
+          <tr class="white">
+            <td class="agenda-col-time"><span class="agenda-time">08:30-08:35</span></td>
+            <td class="agenda-col-title"><span class="agenda-title">院長致歡迎詞</span></td>
+            <td class="agenda-col-speaker"><span class="agenda-speaker">林欣榮 院長</span></td>
+          </tr>
+          <tr class="stripe">
+            <td class="agenda-col-time"><span class="agenda-time">08:35-08:55</span></td>
+            <td class="agenda-col-title"><span class="agenda-title">期勉與叮嚀</span></td>
+            <td class="agenda-col-speaker"><span class="agenda-speaker">林俊龍 執行長</span></td>
+          </tr>
+          <tr class="white">
+            <td class="agenda-col-time"><span class="agenda-time">08:55-09:15</span></td>
+            <td class="agenda-col-title"><span class="agenda-title">愛的鼓勵與期許</span></td>
+            <td class="agenda-col-speaker"><span class="agenda-speaker">林碧玉 副總執行長</span></td>
+          </tr>
+          <tr class="stripe">
+            <td class="agenda-col-time"><span class="agenda-time">09:15-09:55</span></td>
+            <td class="agenda-col-title"><span class="agenda-title">慈善60、醫療40行願之路（暫訂）</span></td>
+            <td class="agenda-col-speaker"><span class="agenda-speaker">精舍師父</span></td>
+          </tr>
+          <tr class="white">
+            <td class="agenda-col-time"><span class="agenda-time">09:55-10:30</span></td>
+            <td class="agenda-col-title"><span class="agenda-title">身心寬暢（貴賓及院外人員 10:00 開始報到）</span></td>
+            <td class="agenda-col-speaker"><span class="agenda-speaker">—</span></td>
+          </tr>
+          <tr class="stripe">
+            <td class="agenda-col-time"><span class="agenda-time">10:30-10:45</span></td>
+            <td class="agenda-col-title"><span class="agenda-title">貴賓致詞</span></td>
+            <td class="agenda-col-speaker"><span class="agenda-speaker">—</span></td>
+          </tr>
+          <tr class="white">
+            <td class="agenda-col-time"><span class="agenda-time">10:45-11:45</span></td>
+            <td class="agenda-col-title"><span class="agenda-title">專題演講：韌性永續 健康台灣</span><span class="agenda-subtitle">共築東部健康生活圈：從醫療整合走向區域健康治理</span></td>
+            <td class="agenda-col-speaker"><span class="agenda-speaker">石崇良 部長（衛生福利部）</span></td>
+          </tr>
+          <tr class="stripe">
+            <td class="agenda-col-time"><span class="agenda-time">11:45-13:15</span></td>
+            <td class="agenda-col-title"><span class="agenda-title">午齋</span></td>
+            <td class="agenda-col-speaker"><span class="agenda-speaker">—</span></td>
+          </tr>
+          <tr class="white">
+            <td class="agenda-col-time"><span class="agenda-time">13:15-13:20</span></td>
+            <td class="agenda-col-title"><span class="agenda-title">大合照</span></td>
+            <td class="agenda-col-speaker"><span class="agenda-speaker">—</span></td>
+          </tr>
+          <tr class="stripe">
+            <td class="agenda-col-time"><span class="agenda-time">13:20-14:20</span></td>
+            <td class="agenda-col-title"><span class="agenda-title">專題演講：人才韌性</span><span class="agenda-subtitle">人才共育・健康共守：建構東部永續醫療人才生態系</span></td>
+            <td class="agenda-col-speaker"><span class="agenda-speaker">吳琬瑜 共同執行長兼內容長(天下雜誌 )</span></td>
+          </tr>
+          <tr class="white">
+            <td class="agenda-col-time"><span class="agenda-time">14:20-15:00</span></td>
+            <td class="agenda-col-title"><span class="agenda-title">交流茶敘、花東區各界第一階段健康臺灣深耕計畫成果海報巡禮</span></td>
+            <td class="agenda-col-speaker"><span class="agenda-speaker">—</span></td>
+          </tr>
+          <tr class="stripe">
+            <td class="agenda-col-time"><span class="agenda-time">15:00-16:00</span></td>
+            <td class="agenda-col-title"><span class="agenda-title">專題演講：永續韌性</span><span class="agenda-subtitle">健康與環境共好：從ESG到東部永續醫療新典範</span></td>
+            <td class="agenda-col-speaker"><span class="agenda-speaker">周麗芳 秘書長(台灣永續能源研究基金會)</span></td>
+          </tr>
+          <tr class="white">
+            <td class="agenda-col-time"><span class="agenda-time">16:00-16:30</span></td>
+            <td class="agenda-col-title"><span class="agenda-title">綜合座談與交流</span></td>
+            <td class="agenda-col-speaker"><span class="agenda-speaker">院長與各講師</span></td>
+          </tr>
+          <tr class="stripe">
+            <td class="agenda-col-time"><span class="agenda-time">16:30</span></td>
+            <td class="agenda-col-title"><span class="agenda-title">賦歸</span></td>
+            <td class="agenda-col-speaker"><span class="agenda-speaker">—</span></td>
+          </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+  <form id="regForm" novalidate>
+
+    <div class="section">
+      <div class="section-header"><span class="bar"></span>第一部分、基本資料</div>
+      <div class="section-body">
+        <div class="field">
+          <label>姓名<span class="req">*</span></label>
+          <input type="text" id="name" placeholder="請填寫真實姓名">
+          <div class="err" id="err-name">請填寫姓名</div>
+        </div>
+        <div class="field">
+          <label>服務單位<span class="req">*</span></label>
+          <input type="text" id="org" placeholder="例如：花蓮慈濟醫院護理部">
+          <div class="err" id="err-org">請填寫單位</div>
+        </div>
+        <div class="field">
+          <label>職稱<span class="req">*</span></label>
+          <input type="text" id="title" placeholder="例如：醫師、護理師、組長">
+          <div class="err" id="err-title">請填寫職稱</div>
+        </div>
+        <div class="field">
+          <label>聯絡電話<span class="req">*</span></label>
+          <input type="tel" id="phone" placeholder="請填寫可聯繫之電話">
+          <div class="err" id="err-phone">請填寫聯絡電話</div>
+        </div>
+        <div class="field">
+          <label>電子郵件mail<span class="req">*</span></label>
+          <input type="email" id="email" placeholder="請填寫 Email，以利寄送確認信">
+          <div class="err" id="err-email">請填寫電子信箱</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header"><span class="bar"></span>第二部分、膳食統計</div>
+      <div class="section-body">
+        <div class="field">
+          <div class="note-box">本次論壇午餐提供秧悦美地度假酒店內部蔬食自助餐</div>
+          <div class="radio-list" id="mealGroup">
+            <label><input type="radio" name="meal" value="用餐">用餐</label>
+            <label><input type="radio" name="meal" value="不需用餐">不需用餐</label>
+          </div>
+          <div class="err" id="err-meal">請選擇是否用餐</div>
+        </div>
+        <div class="field">
+          <label>其他需求</label>
+          <textarea id="mealNote" placeholder="如有飲食過敏或特殊飲食禁忌需求，請在此說明..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header"><span class="bar"></span>第三部分、交通接駁車</div>
+      <div class="section-body">
+        <div class="field">
+          <div class="radio-list" id="transportGroup">
+            <label><input type="radio" name="transport" value="自行前往">自行前往</label>
+            <label><input type="radio" name="transport" value="搭乘接駁車">搭乘接駁車</label>
+          </div>
+          <div class="err" id="err-transport">請選擇交通方式</div>
+          <div class="note-box" style="margin-top:12px;margin-bottom:0;">院內同仁如需接駁，將於當日 08:00 自本院同心圓1樓統一發車前往秧悦美地度假酒店，會後 16:50 賦歸亦統一搭乘接駁車返院；亦可自行開車或搭乘大眾運輸前往會場。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="submit-wrap">
+        <button type="submit" class="submit" id="submitBtn">送出報名</button>
+      </div>
+    </div>
+  </form>
+
+  <div class="section success" id="successBox">
+    <div style="padding:34px 20px;">
+      <div class="check">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 12.5L9.5 18L20 6.5" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h3>報名已送出</h3>
+      <p>✅ 報名成功，感謝您的填寫！我們已收到您的資料。</p>
+    </div>
+  </div>
+
+  </div>
+
+  <footer class="note">花蓮慈濟醫院・創院 40 週年系列活動｜守護生命 · 守護健康 · 守護愛</footer>
+</div>
+
+<script>
+
+// ▼▼▼ Google 試算表後台設定 ▼▼▼
+// 1. 依照附上的教學，在 Google 試算表建立 Apps Script 並部署為「網頁應用程式」
+// 2. 把拿到的網址（結尾是 /exec）貼到下面雙引號中間
+const SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzbrPoF9cYkPh05RGXclIcBhRhT7TbXfUVPNfLWlfu0h8TELY3IY4rAxg1nrpxLZMDsXw/exec";
+
+function getRadioValue(name){
+  const el = document.querySelector(`input[name=${name}]:checked`);
+  return el ? el.value : "";
+}
+function showError(id, show){
+  document.getElementById(id).style.display = show ? "block" : "none";
+}
+function isValidEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+// 把一筆報名資料送到 Google 試算表後台（透過 Apps Script 網頁應用程式）
+// 用 no-cors + text/plain 送出，避免瀏覽器對 Apps Script 網址做 CORS 預檢請求而被擋下；
+// 缺點是頁面端無法讀到回應內容，因此請直接到 Google 試算表確認資料是否寫入成功。
+async function sendToSheet(entry){
+  if(!SHEET_WEBAPP_URL || SHEET_WEBAPP_URL.indexOf("PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE") !== -1){
+    console.warn("尚未設定 SHEET_WEBAPP_URL，此筆報名資料未同步到 Google 試算表。");
+    return;
+  }
+  await fetch(SHEET_WEBAPP_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify(entry)
+  });
+}
+
+document.getElementById("regForm").addEventListener("submit", async (e)=>{
+  e.preventDefault();
+  const name = document.getElementById("name").value.trim();
+  const org = document.getElementById("org").value.trim();
+  const title = document.getElementById("title").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const meal = getRadioValue("meal");
+  const mealNote = document.getElementById("mealNote").value.trim();
+  const transport = getRadioValue("transport");
+
+  let valid = true;
+  showError("err-name", !name); if(!name) valid=false;
+  showError("err-org", !org); if(!org) valid=false;
+  showError("err-title", !title); if(!title) valid=false;
+  showError("err-phone", !phone); if(!phone) valid=false;
+  const emailBad = !email || !isValidEmail(email);
+  showError("err-email", emailBad); if(emailBad) valid=false;
+  showError("err-meal", !meal); if(!meal) valid=false;
+  showError("err-transport", !transport); if(!transport) valid=false;
+  if(!valid) return;
+
+  const submitBtn = document.getElementById("submitBtn");
+  submitBtn.disabled = true;
+  submitBtn.textContent = "送出中…";
+
+  const entry = {
+    name, org, title, phone, email, meal, mealNote, transport,
+    submittedAt: new Date().toISOString()
+  };
+
+  try{
+    // 主要後台：寫入 Google 試算表
+    await sendToSheet(entry);
+    document.getElementById("regForm").style.display = "none";
+    document.getElementById("successBox").style.display = "block";
+  }catch(err){
+    alert("送出失敗，請確認網路連線後再試一次。");
+    submitBtn.disabled = false;
+    submitBtn.textContent = "送出報名";
+  }
+});
+
+
+</script>
+</body>
+</html>
+
