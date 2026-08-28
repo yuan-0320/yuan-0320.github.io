@@ -289,6 +289,25 @@
             color: #5a6b7d;
             font-size: 0.95rem;
         }
+
+        .agenda-card { overflow: hidden; }
+        .agenda-table-wrap { padding: 0; overflow-x: auto; }
+        .agenda-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+        .agenda-table th, .agenda-table td { padding: 14px 12px; text-align: left; vertical-align: middle; border-bottom: 1px solid var(--border-color); overflow-wrap: break-word; }
+        .agenda-table thead { background: var(--primary-green); color: #fff; }
+        .agenda-table th { font-size: 0.95rem; }
+        .agenda-table tbody tr:nth-child(even) { background: #f0f6f2; }
+        .agenda-table tbody tr:last-child td { border-bottom: 0; }
+        .agenda-time { width: 20%; color: #176b59; font-weight: 700; white-space: nowrap; }
+        .agenda-topic { width: 54%; font-weight: 700; }
+        .agenda-topic small { display: block; margin-top: 3px; color: #5a6b7d; font-weight: 400; font-size: 0.92em; }
+        .agenda-speaker { width: 26%; color: #4a4a4a; font-size: 0.9rem; }
+        @media (max-width: 600px) {
+            .agenda-table th, .agenda-table td { padding: 11px 8px; font-size: 0.82rem; }
+            .agenda-time { width: 22%; white-space: normal; }
+            .agenda-topic { width: 50%; }
+            .agenda-speaker { width: 28%; font-size: 0.78rem; }
+        }
     </style>
 </head>
 <body>
@@ -353,7 +372,31 @@
             </div>
         </div>
 
-        <!-- Section 1: 基本資料 -->
+
+        <!-- Agenda -->
+        <div class="card agenda-card">
+            <div class="section-header">健康台灣深耕論壇議程</div>
+            <div class="agenda-table-wrap">
+                <table class="agenda-table">
+                    <thead>
+                        <tr><th class="agenda-time">時間</th><th class="agenda-topic">主題</th><th class="agenda-speaker">主講者／主持人</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="agenda-time">10:00–10:30</td><td class="agenda-topic">報到</td><td class="agenda-speaker">—</td></tr>
+                        <tr><td class="agenda-time">10:30–10:45</td><td class="agenda-topic">致詞、介紹貴賓</td><td class="agenda-speaker">—</td></tr>
+                        <tr><td class="agenda-time">10:45–11:45</td><td class="agenda-topic">專題演講：韌性永續 健康台灣<small>共築東部健康生活圈：從醫療整合走向區域健康治理</small></td><td class="agenda-speaker">石崇良 部長<br>（衛生福利部）</td></tr>
+                        <tr><td class="agenda-time">11:45–13:15</td><td class="agenda-topic">交流午餐</td><td class="agenda-speaker">—</td></tr>
+                        <tr><td class="agenda-time">13:15–13:20</td><td class="agenda-topic">大合照</td><td class="agenda-speaker">—</td></tr>
+                        <tr><td class="agenda-time">13:20–14:20</td><td class="agenda-topic">專題演講：人才韌性<small>人才共育・健康共守：建構東部永續醫療人才生態系</small></td><td class="agenda-speaker">吳琬瑜 共同執行長兼內容長<br>（天下雜誌）</td></tr>
+                        <tr><td class="agenda-time">14:20–15:00</td><td class="agenda-topic">交流茶敘、花東區各界第一階段健康臺灣深耕計畫成果海報巡禮</td><td class="agenda-speaker">—</td></tr>
+                        <tr><td class="agenda-time">15:00–16:00</td><td class="agenda-topic">專題演講：永續韌性<small>健康與環境共好：從 ESG 到東部永續醫療新典範</small></td><td class="agenda-speaker">周麗芳 秘書長<br>（台灣永續能源研究基金會）</td></tr>
+                        <tr><td class="agenda-time">16:00–16:30</td><td class="agenda-topic">綜合座談與交流</td><td class="agenda-speaker">院長與各講師</td></tr>
+                        <tr><td class="agenda-time">16:30</td><td class="agenda-topic">賦歸</td><td class="agenda-speaker">—</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+\n        <!-- Section 1: 基本資料 -->
         <div class="card">
             <div class="section-header">第一部分、基本資料</div>
             <div class="form-body">
