@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>花蓮慈濟醫院創院40週年－健康台灣深耕論壇（院外報名）</title>
+    <style>
+        :root {
+            --primary-green: #1b5e20;
+            --secondary-green: #2e7d32;
+            --accent-gold: #c5a059;
+            --light-bg: #f4f6f4;
+            --border-color: #e0e0e0;
+            --text-dark: #2c3e50;
+            --text-muted: #666666;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 20px 10px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .header-card {
+            border-top: 8px solid var(--primary-green);
+        }
+
+        .banner-container {
+            width: 100%;
+            background-color: #ffffff;
+            text-align: center;
+            overflow: hidden;
+            border-bottom: 2px solid var(--primary-green);
+        }
+
+        .banner-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .header-content {
+            padding: 25px 30px;
+        }
+
+        .anniversary-tag {
+            display: inline-block;
+            color: var(--accent-gold);
+            font-weight: bold;
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            color: var(--primary-green);
+            font-size: 1.6rem;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--secondary-green);
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .event-info {
+            background-color: #f9fbf9;
+            border-left: 4px solid var(--secondary-green);
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .notice-box {
+            border: 2px solid #a5d6a7;
+            background-color: #f1f8f2;
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 15px;
+            color: var(--primary-green);
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-label {
+            font-weight: bold;
+            min-width: 90px;
+            color: var(--primary-green);
+        }
+
+        .section-header {
+            background-color: var(--primary-green);
+            color: #ffffff;
+            padding: 12px 20px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-header::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 16px;
+            background-color: var(--accent-gold);
+            margin-right: 10px;
+            border-radius: 2px;
+        }
+
+        .form-body {
+            padding: 25px 30px;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+
+        label.form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .required {
+            color: #d9534f;
+            margin-left: 4px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px 14px;
+            font-size: 0.95rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+        }
+
+        .form-control:focus {
+            border-color: var(--secondary-green);
+            box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.15);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .option-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 6px;
+        }
+
+        .option-label {
+            display: flex;
+            align-items: center;
+            font-weight: normal;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .option-label input[type="radio"],
+        .option-label input[type="checkbox"] {
+            margin-right: 10px;
+            width: 16px;
+            height: 16px;
+            accent-color: var(--primary-green);
+        }
+
+        .submit-btn {
+            background-color: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 14px 40px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.2s, transform 0.1s;
+            box-shadow: 0 4px 10px rgba(27, 94, 32, 0.2);
+        }
+
+        .submit-btn:hover {
+            background-color: var(--secondary-green);
+        }
+
+        .submit-btn:active {
+            transform: scale(0.99);
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .header-content, .form-body {
+                padding: 18px 20px;
+            }
+            .info-item {
+                flex-direction: column;
+            }
+            .info-label {
+                margin-bottom: 2px;
+            }
+        }
+
+        .success-card {
+            display: none;
+            text-align: center;
+            padding: 60px 30px;
+        }
+
+        .success-icon {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background-color: var(--primary-green);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            line-height: 1;
+        }
+
+        .success-title {
+            color: var(--primary-green);
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .success-desc {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #5a6b7d;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <form id="regForm" action="#" method="POST">
+        
+        <!-- Header Card with Base64 Invitation Card -->
+        <div class="card header-card">
+            <div class="header-content">
+                <div class="anniversary-tag">✦ 花蓮慈濟醫院 創院40周年 ✦</div>
+<h1>花蓮慈濟醫院創院40週年－健康台灣深耕論壇</h1>
+                <div class="subtitle">打造台灣東部健康韌性與區域永續發展交流論壇</div>
+                
+                <p style="font-size: 0.95rem; color: #444; margin-bottom: 15px;">
+                    誠摯邀請各界參與花蓮慈濟醫院創院40週年健康台灣深耕論壇。活動邀集產官學研與醫療夥伴，交流治理韌性、人才韌性與永續韌性，攜手打造東部健康韌性與區域永續發展。
+                </p>
+
+                <div class="event-info">
+                    <div class="info-item">
+                        <span class="info-label">📅 時間：</span>
+                        <span>2026 年 10 月 04 日（星期日）10:00 - 16:30</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">📍 地點：</span>
+                        <span>秧悦美地度假酒店 GAEA VILLA（花蓮縣吉安鄉干城一街183號）</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">💡 費用：</span>
+                        <span>免費參加（名額有限，敬請提早報名）</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">🏛️ 指導單位：</span>
+                        <span>衛生福利部</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">🏥 主辦單位：</span>
+                        <span>佛教慈濟醫療財團法人花蓮慈濟醫院</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Info Card -->
+        <div class="card">
+            <div class="form-body" style="padding: 18px 30px;">
+                <div class="info-item">
+                    <span class="info-label">👤 活動聯絡人：</span>
+                    <span>企劃室劉組長</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">📞 聯絡電話：</span>
+                    <span>038561825#15318</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">✉️ 電子郵件：</span>
+                    <span>ldgallen@tzuchi.com.tw</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 1: 基本資料 -->
+        <div class="card">
+            <div class="section-header">第一部分、基本資料</div>
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="form-label" for="name">姓名<span class="required">*</span></label>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="請填寫真實姓名" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="organization">服務單位 / 機構名稱<span class="required">*</span></label>
+                    <input type="text" id="organization" name="organization" class="form-control" placeholder="例如：花蓮慈濟醫院、慈濟大學" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="title">職稱<span class="required">*</span></label>
+                    <input type="text" id="title" name="title" class="form-control" placeholder="例如：醫師、護理師、教授、組長" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="phone">聯絡電話 / 手機<span class="required">*</span></label>
+                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="09xx-xxx-xxx" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="email">電子郵件 (E-mail)<span class="required">*</span></label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="name@example.com" required>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: 膳食統計 -->
+        <div class="card">
+            <div class="section-header">第二部分、膳食統計</div>
+            <div class="form-body">
+                <div class="notice-box">
+                    本次論壇午餐提供秧悦美地度假酒店內部蔬食自助餐。
+                </div>
+                <div class="form-group">
+                    <label class="form-label">午膳統計<span class="required">*</span></label>
+                    <div class="option-group">
+                        <label class="option-label">
+                            <input type="radio" name="meal" value="vegetarian" required> 用餐
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="meal" value="none"> 不需用餐
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="other_needs">其他需求</label>
+                    <textarea id="other_needs" name="other_needs" class="form-control" placeholder="如有飲食過敏或特殊飲食禁忌需求，請在此說明..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: 交通接駁車 -->
+        <div class="card">
+            <div class="section-header">第三部分、交通接駁車</div>
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="form-label">交通接駁需求<span class="required">*</span></label>
+                    <div class="option-group">
+                        <label class="option-label">
+                            <input type="radio" name="shuttle" value="self" required> 自行前往
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="shuttle" value="shuttle"> 搭乘接駁車
+                        </label>
+                    </div>
+                </div>
+                <div class="notice-box" style="margin-top: 10px; margin-bottom: 0;">
+                    將於當日 09:50 自花蓮火車站口統一發車前往秧悦美地度假酒店，會後 16:50 賦歸亦統一搭乘接駁車返回花蓮火車站；亦可自行開車或搭乘大眾運輸前往會場。
+                </div>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div style="text-align: center; margin-top: 10px;">
+            <button type="submit" class="submit-btn" id="submitBtn">確認送出報名</button>
+            <p id="formMsg" style="margin-top:12px; font-size:0.9rem; display:none;"></p>
+        </div>
+
+    </form>
+
+    <div class="card success-card" id="successCard">
+        <div class="success-icon">✓</div>
+        <div class="success-title">報名已送出</div>
+        <div class="success-desc">✅ 報名成功，感謝您的填寫！我們已收到您的資料。</div>
+    </div>
+
+    <div class="footer">
+        <p>主辦單位：花蓮慈濟醫院</p>
+        <p>© 2026 花蓮慈濟醫院 Hualien Tzu Chi Hospital. All Rights Reserved.</p>
+    </div>
+</div>
+
+<script>
+    // === 請將下面的網址換成你部署完成的 Google Apps Script 網頁應用程式網址 ===
+    // 設定方式請參考另外提供的「Code.gs 設定說明」
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwIS-HFb_-2RmZOanV3G9r-82S1TendscGmAizHRt7o_7uDszHmsdndZgJgYilt-eUCdA/exec";
+
+    const form = document.getElementById('regForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const formMsg = document.getElementById('formMsg');
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        if (!SCRIPT_URL || SCRIPT_URL.indexOf('https://') !== 0) {
+            formMsg.style.display = 'block';
+            formMsg.style.color = '#d9534f';
+            formMsg.textContent = '尚未設定後台網址，請聯絡網站管理者（SCRIPT_URL 未設定）。';
+            return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = '送出中，請稍候...';
+        formMsg.style.display = 'none';
+
+        const formData = new FormData(form);
+
+        // Google Apps Script 的 Web App 不支援一般 CORS 讀取回應，
+        // 故採用 no-cors 模式送出；只要沒有連線錯誤即視為送出成功。
+        fetch(SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: formData
+        })
+        .then(function () {
+            form.style.display = 'none';
+            document.getElementById('successCard').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        })
+        .catch(function (err) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = '確認送出報名';
+            formMsg.style.display = 'block';
+            formMsg.style.color = '#d9534f';
+            formMsg.textContent = '送出失敗，請檢查網路連線後再試一次，或聯絡活動聯絡人。';
+            console.error(err);
+        });
+    });
+</script>
+
+</body>
+</html>
+
