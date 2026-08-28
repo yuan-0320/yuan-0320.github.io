@@ -434,16 +434,12 @@
       <div class="section-header"><span class="bar"></span>第二部分、參與調查</div>
       <div class="section-body">
         <div class="field">
-          <div class="note-box">本次論壇午餐提供秧悦美地度假酒店內部蔬食自助餐</div>
-          <div class="radio-list" id="mealGroup">
-            <label><input type="radio" name="meal" value="用餐">用餐</label>
-            <label><input type="radio" name="meal" value="不需用餐">不需用餐</label>
+          <label>是否參與主管核心共識營<span class="req">*</span></label>
+          <div class="radio-list" id="participationGroup">
+            <label><input type="radio" name="participation" value="參與">參與</label>
+            <label><input type="radio" name="participation" value="不參與">不參與</label>
           </div>
-          <div class="err" id="err-meal">請選擇是否用餐</div>
-        </div>
-        <div class="field">
-          <label>其他需求</label>
-          <textarea id="mealNote" placeholder="如有飲食過敏或特殊飲食禁忌需求，請在此說明..."></textarea>
+          <div class="err" id="err-participation">請選擇是否參與</div>
         </div>
       </div>
     </div>
@@ -523,8 +519,7 @@ document.getElementById("regForm").addEventListener("submit", async (e)=>{
   const title = document.getElementById("title").value.trim();
   const phone = document.getElementById("phone").value.trim();
   const email = document.getElementById("email").value.trim();
-  const meal = getRadioValue("meal");
-  const mealNote = document.getElementById("mealNote").value.trim();
+  const participation = getRadioValue("participation");
   const transport = getRadioValue("transport");
 
   let valid = true;
@@ -534,7 +529,7 @@ document.getElementById("regForm").addEventListener("submit", async (e)=>{
   showError("err-phone", !phone); if(!phone) valid=false;
   const emailBad = !email || !isValidEmail(email);
   showError("err-email", emailBad); if(emailBad) valid=false;
-  showError("err-meal", !meal); if(!meal) valid=false;
+  showError("err-participation", !participation); if(!participation) valid=false;
   showError("err-transport", !transport); if(!transport) valid=false;
   if(!valid) return;
 
@@ -543,7 +538,7 @@ document.getElementById("regForm").addEventListener("submit", async (e)=>{
   submitBtn.textContent = "送出中…";
 
   const entry = {
-    name, org, title, phone, email, meal, mealNote, transport,
+    name, org, title, phone, email, participation, transport,
     submittedAt: new Date().toISOString()
   };
 
